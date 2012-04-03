@@ -13,7 +13,9 @@ I like to keep these scripts in \~/bin, hence the name.
 
 Summary of tools
 ================
-- **pyinit**: Creates the skeleton for a new Python package in the current 
+pyinit
+    Creates the skeleton for a new Python package in the current 
     directory.
-- **scd**: Changes the "current directory" of the active screen session to the 
+scd
+    Changes the "current directory" of the active screen session to the 
     current directory
