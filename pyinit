@@ -1,3 +1,4 @@
 #!/bin/bash
+# Copies the basic skeleton of a new Python package into the current directory.
 
 wget -q -O - --no-check-certificate "https://github.com/drewfrank/python-package-template/tarball/master/tarball/master" | tar -xz --strip-components=1 -f -
