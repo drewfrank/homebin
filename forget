@@ -5,5 +5,5 @@
 
 for host in "$@"; do
     ssh-keygen -R $host &>/dev/null
-    ssh-keygen -R `ssh -o "StrictHostKeyChecking no" -v dl1 'exit' |& grep "IP address" | cut -d " " -f 16 | sed "s/'//g"` &>/dev/null
+    ssh-keygen -R `ssh -o "StrictHostKeyChecking no" -v $host 'exit' |& grep "IP address" | cut -d " " -f 16 | sed "s/'//g"` &>/dev/null
 done
