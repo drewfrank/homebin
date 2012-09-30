@@ -1,0 +1,9 @@
+#!/bin/bash
+# Remove all entries for each host specified on the command line from known_hosts.
+# The acrobatics in the second line of the loop resolve the ip address of an ssh
+# host alias and remove entries for that ip address as well.
+
+for host in "$@"; do
+    ssh-keygen -R $host &>/dev/null
+    ssh-keygen -R `ssh -o "StrictHostKeyChecking no" -v dl1 'exit' |& grep "IP address" | cut -d " " -f 16 | sed "s/'//g"` &>/dev/null
+done
