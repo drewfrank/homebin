@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Open a tunnel to another server, acting as a SOCKS proxy.
+
+if [ $# -lt 2 ]; then
+    PORT=`shuf -i 1025-9999 -n 1`
+else
+    PORT=$2
+fi
+
+echo Opening tunnel to $1 on port $PORT...
+
+ssh -NCqTn -D $PORT $1
