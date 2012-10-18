@@ -1,0 +1,2 @@
+#!/bin/zsh
+for code in {000..255}; do print -P -n -- "%F{$code}$code%f "; if [ `print \($code + 1\)\%16 | bc` -eq "0" ]; then print; fi; done
